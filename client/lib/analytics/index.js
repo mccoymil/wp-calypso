@@ -559,15 +559,10 @@ const analytics = {
 			// so we can analyze their performance with our analytics tools
 			if ( window.location ) {
 				const urlParams = new URL( window.location.href ).searchParams;
-				const utmParams = {};
-
-				if ( urlParams ) {
-					for ( const key of urlParams.keys() ) {
-						if ( key.startsWith( 'utm_' ) ) {
-							utmParams[ key ] = urlParams.get( key );
-						}
-					}
-				}
+				const utmParamEntries =
+					urlParams &&
+					Array.from( urlParams.entries() ).filter( ( [ key ] ) => key.startsWith( 'utm_' ) );
+				const utmParams = utmParamEntries ? Object.fromEntries( utmParamEntries ) : {};
 
 				eventProperties = assign( eventProperties, utmParams );
 			}
