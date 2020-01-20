@@ -15,7 +15,7 @@ import { AppState } from 'types';
  * @param experiment The name of the experiment
  */
 export const getVariationForUser = ( state: AppState, experiment: string ) =>
-	get( state, [ 'experiments', 'tests', experiment ], null );
+	get( state, [ 'experiments', 'variations', experiment ], null );
 
 /**
  * Returns true if the variations are loading for the current user
