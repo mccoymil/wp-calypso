@@ -1466,7 +1466,7 @@ function floodlightUserParams() {
  *
  * @returns {string} - The Tracks anonymous user id
  */
-function tracksAnonymousUserId() {
+export function tracksAnonymousUserId() {
 	const cookies = cookie.parse( document.cookie );
 	return cookies.tk_ai;
 }
