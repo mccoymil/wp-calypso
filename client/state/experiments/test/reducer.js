@@ -97,7 +97,7 @@ describe( 'Experiment Reducer', () => {
 		} );
 	} );
 
-	describe( 'User recieve action', () => {
+	describe( 'User receive action', () => {
 		test( 'It should reset the assignments, except for the anonId', () => {
 			const initialState = {
 				anonId: 'hello world',
