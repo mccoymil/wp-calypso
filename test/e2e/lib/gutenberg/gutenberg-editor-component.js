@@ -193,7 +193,7 @@ export default class GutenbergEditorComponent extends AsyncBaseContainer {
 	async addBlock( name ) {
 		name = name.charAt( 0 ).toUpperCase() + name.slice( 1 ); // Capitalize block name
 		let blockClass = kebabCase( name );
-		let selectedBlockConfirmClass = 'is-selected';
+		let hasChildBlocks = false;
 		let prefix = '';
 		switch ( name ) {
 			case 'Instagram':
@@ -219,7 +219,7 @@ export default class GutenbergEditorComponent extends AsyncBaseContainer {
 				break;
 			case 'Pricing Table':
 				prefix = 'coblocks-';
-				selectedBlockConfirmClass = 'has-child-selected';
+				hasChildBlocks = true;
 				break;
 			case 'Logos & Badges':
 				prefix = 'coblocks-';
@@ -235,7 +235,9 @@ export default class GutenbergEditorComponent extends AsyncBaseContainer {
 			`li.block-editor-block-types-list__list-item button.editor-block-list-item-${ prefix }${ blockClass }`
 		);
 		const insertedBlockSelector = By.css(
-			`.block-editor-block-list__block.${ selectedBlockConfirmClass }[aria-label*='${ name } Block']`
+			`.block-editor-block-list__block.${
+				hasChildBlocks ? 'has-child-selected' : 'is-selected'
+			}[aria-label*='${ name } Block']`
 		);
 
 		await this.openBlockInserterAndSearch( name );
