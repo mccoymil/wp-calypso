@@ -57,6 +57,7 @@ import isSiteOnPaidPlan from 'state/selectors/is-site-on-paid-plan';
 import { getCurrentUser, isCurrentUserEmailVerified } from 'state/current-user/selectors';
 import QueryActiveTheme from 'components/data/query-active-theme';
 import QueryCanonicalTheme from 'components/data/query-canonical-theme';
+import StatsCard from './stats-card';
 
 /**
  * Style dependencies
@@ -523,6 +524,7 @@ class Home extends Component {
 							</Button>
 						</Card>
 					) }
+					{ ! siteIsUnlaunched && <StatsCard /> }
 					{ ! siteIsUnlaunched && (
 						<Card>
 							<CardHeading>{ translate( 'My Site' ) }</CardHeading>
