@@ -23,6 +23,7 @@
 		"@automattic/material-design-icons": "file:../packages/material-design-icons",
 		"@automattic/muriel-style": "file:../packages/muriel-style",
 		"@automattic/tree-select": "file:../packages/tree-select",
+		"@automattic/calypso-analytics": "file:../packages/calypso-analytics",
 		"@babel/runtime": "7.7.6",
 		"@emotion/core": "10.0.22",
 		"@emotion/styled": "10.0.23",
