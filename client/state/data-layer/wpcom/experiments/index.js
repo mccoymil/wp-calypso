@@ -18,7 +18,7 @@ import config from 'config';
  */
 const transformApiRequest = data => ( {
 	variations: data.variations,
-	nextRefresh: Date.now() + data.ttl,
+	nextRefresh: Date.now() + data.ttl * 1000,
 } );
 
 /**
