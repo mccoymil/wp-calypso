@@ -9,6 +9,8 @@ import React, { PureComponent } from 'react';
 import SuggestionSearch from '../';
 
 class SuggestionSearchExample extends PureComponent {
+	static displayName = 'SuggestionSearchExample';
+
 	onSiteTopicChange = value => this.state( { selected: value } );
 
 	sortDisplayResults = ( suggestionsArray, queryString ) =>
